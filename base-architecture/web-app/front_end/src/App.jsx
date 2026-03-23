@@ -7,6 +7,7 @@ function App() {
   const [password, setPassword] = useState('');
   const [newUsername, setNewUsername] = useState('');
   const [newPassword, setNewPassword] = useState('');
+  const [loginStatus, setLoginStatus] = useState('');
 
   const handleRegister = async () => {
     try {
@@ -21,6 +22,7 @@ function App() {
     }
   };
 
+
   const handleLogin = async () => {
     try {
       const data = await axios.post('http://localhost:3000/api/login', {
@@ -28,6 +30,7 @@ function App() {
         password,
       });
       console.log('Login successful:', data.data);
+      setLoginStatus('Login successful!, welcome ' + username);
     } catch (error) {
       console.error('Error during login:', error);
       alert('Login failed. Please check your credentials and try again.');
@@ -64,7 +67,9 @@ function App() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleLogin}>Login</button>
+      <h2>{loginStatus}</h2>
     </div>
+
   )
 }
 
