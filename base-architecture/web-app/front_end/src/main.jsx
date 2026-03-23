@@ -1,5 +1,3 @@
-import react from 'react'
-import reactDom from 'react-dom'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
