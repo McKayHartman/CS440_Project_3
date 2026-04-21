@@ -1,5 +1,5 @@
 {
-  "name": "text-service",
+  "name": "api-gateway",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -12,6 +12,6 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1",
-    "sqlite3": "^6.0.1"
+    "http-proxy-middleware": "^3.0.5"
   }
 }
