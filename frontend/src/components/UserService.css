@@ -1,0 +1,32 @@
+.UserService {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffcdcd;
+    border-radius: 8px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom: 20px;
+}
+
+.auth-section {
+    width: 300px;
+    margin: 10px;
+}
+
+.UserService input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.UserService h2 {
+    margin-top: 0;
+}
