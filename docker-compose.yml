@@ -1,0 +1,41 @@
+services:
+  text-service:
+    build: ./microservices/text-service
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./microservices/text-service/db:/app/db
+
+  user-login-service:
+    build: ./microservices/user-login-service
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./microservices/user-login-service/db:/app/db
+
+  image-service:
+    build: ./microservices/image-service
+    ports:
+      - "5003:5003"
+    volumes:
+      - ./microservices/image-service/db:/app/db
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "4000:4000"
+    environment:
+      - TEXT_SERVICE_URL=http://text-service:5001
+      - USER_SERVICE_URL=http://user-login-service:5002
+      - IMAGE_SERVICE_URL=http://image-service:5003
+    depends_on:
+      - text-service
+      - user-login-service
+      - image-service
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api-gateway

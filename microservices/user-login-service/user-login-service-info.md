@@ -3,7 +3,7 @@ Same stuff as we had in our original project 1 structure, just put it in here
 Account creation and login
 
 YOUR API GATEWAY ENDPOINT: '/api/users/'
-PORT: 5003
+PORT: 5002
 
 Requirements:
 1. log the user in and save the userId to local storage under 'userId'

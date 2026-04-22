@@ -23,7 +23,10 @@ function upsertNote(userId, content, callback) {
         `,
         [userId, content],
         function (err) {
-            if (err) return callback(err);
+            if (err) {
+                console.error("DATABASE ERROR:", err.message);
+                return callback(err);
+            }
             callback(null, {
                 userId,
                 changes: this.changes
