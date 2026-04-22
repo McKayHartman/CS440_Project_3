@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "4000:4000"
+    depends_on:
+      - text-service
+      - user-login-service
+      - image-service
+
+  text-service:
+    build: ./microservices/text-service
+    ports:
+      - "5001:5001"
+
+  user-login-service:
+    build: ./microservices/user-login-service
+    ports:
+      - "5002:5002"
+
+  image-service:
+    build: ./microservices/image-service
+    ports:
+      - "5003:5003"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api-gateway

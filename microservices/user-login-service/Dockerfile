@@ -8,6 +8,6 @@ RUN npm install --build-from-source
 
 COPY . .
 
-EXPOSE 5001
+EXPOSE 5002
 
 CMD ["node", "app.js"]

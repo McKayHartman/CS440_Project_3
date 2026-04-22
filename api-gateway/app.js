@@ -7,7 +7,7 @@ const port = 4000;
 app.use(
   '/api/text',
   createProxyMiddleware({
-    target: 'http://localhost:5001',
+    target: 'http://text-service:5001',
     changeOrigin: true,
   })
 );
@@ -15,7 +15,7 @@ app.use(
 app.use(
   '/api/users',
   createProxyMiddleware({
-    target: 'http://localhost:5002',
+    target: 'http://user-login-service:5002',
     changeOrigin: true,
   })
 );
@@ -23,7 +23,7 @@ app.use(
 app.use(
   '/api/images',
   createProxyMiddleware({
-    target: 'http://localhost:5003',
+    target: 'http://image-service:5003',
     changeOrigin: true,
   })
 );
