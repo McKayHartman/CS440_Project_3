@@ -1,0 +1,16 @@
+{
+  "name": "image-service",
+  "version": "1.0.0",
+  "description": "Image microservice for CS440 Project 3",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
